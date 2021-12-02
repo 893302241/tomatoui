@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import '@/assets/iconfont/iconfont'
-import '@/assets/style/light'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
@@ -49,7 +48,8 @@ const onNavigate = (item: componentItem) => {
     </div>
   </div>
 </template>
-<style lang="scss" scoped>
+<style lang="less" scoped>
+@import '@/assets/style/light.less';
 #tomatoui {
   height: 100%;
   .tomatoui-header {
