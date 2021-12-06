@@ -4,14 +4,16 @@
  * @Author: AlexYuan
  * @Date: 2021-11-29 18:52:02
  * @LastEditors: you
- * @LastEditTime: 2021-12-02 16:50:39
+ * @LastEditTime: 2021-12-03 14:23:30
 -->
 <template>
-  <button class="tt-btn tt-btn--normal" :class="dyClass"><slot></slot></button>
+  <button class="tt-btn tt-btn--normal" :class="dyClass" @click.stop="onClick">
+    <slot></slot>
+  </button>
 </template>
 
 <script lang="ts" setup>
-import { defineProps, PropType, computed } from 'vue'
+import { defineProps, defineEmits, PropType, computed } from 'vue'
 import { IThemeType } from '@/shared/type'
 
 const props = defineProps({
@@ -42,6 +44,10 @@ const dyClass = computed(() => {
     'tt-btn--text': props.text
   }
 })
+const emitClick = defineEmits(['click'])
+const onClick = (e: unknown) => {
+  emitClick('click', e)
+}
 </script>
 <style lang="less">
 @import '@/assets/style/common.less';

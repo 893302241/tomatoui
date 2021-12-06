@@ -9,7 +9,7 @@ interface componentItem {
 }
 const componentMap = [
   {
-    name: '按钮',
+    name: 'Button 按钮',
     type: 'button'
   }
 ]

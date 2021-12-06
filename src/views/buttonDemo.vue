@@ -4,7 +4,7 @@
  * @Author: AlexYuan
  * @Date: 2021-11-26 10:12:43
  * @LastEditors: you
- * @LastEditTime: 2021-12-02 17:00:53
+ * @LastEditTime: 2021-12-03 14:24:42
 -->
 <template>
   <div id="tomatoui-preview-button">
@@ -26,16 +26,21 @@
     </div>
     <div>
       <h4>禁用状态</h4>
+      <tt-button>默认按钮</tt-button>
       <tt-button disabled>禁用按钮</tt-button>
     </div>
     <div>
       <h4>文字按钮</h4>
       <tt-button text>文字按钮</tt-button>
-      <tt-button outline type="success">外边框按钮</tt-button>
+      <tt-button outline @click="handleClick">外边框按钮</tt-button>
     </div>
   </div>
 </template>
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const handleClick = () => {
+  console.log(111)
+}
+</script>
 <style lang="less" scoped>
 h4 {
   margin-bottom: 10px;
