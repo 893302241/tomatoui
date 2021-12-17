@@ -4,25 +4,21 @@
  * @Author: AlexYuan
  * @Date: 2021-11-29 18:52:02
  * @LastEditors: you
- * @LastEditTime: 2021-12-03 14:23:30
+ * @LastEditTime: 2021-12-15 21:47:46
 -->
 <template>
   <button class="tt-btn tt-btn--normal" :class="dyClass" @click.stop="onClick">
+    <tt-loading v-if="loading" class="tt-btn--loading" :type="loadingType"></tt-loading>
+    <div class="tt-btn-loading-content" v-if="loading"></div>
     <slot></slot>
   </button>
 </template>
 
 <script lang="ts" setup>
-import { defineProps, defineEmits, PropType, computed } from 'vue'
-import { IThemeType } from '@/shared/type'
+import { defineProps, defineEmits, computed } from 'vue'
+import prop from './props.ts'
 
-const props = defineProps({
-  disabled: Boolean,
-  outline: Boolean,
-  text: Boolean,
-  size: { type: String as PropType<'mini' | 'small' | 'large' | 'normal'>, default: 'normal' },
-  type: { type: String as PropType<IThemeType | 'mode'>, default: 'normal' }
-})
+const props = defineProps(prop)
 const dyClass = computed(() => {
   return {
     // 按钮主题

@@ -4,11 +4,12 @@
  * @Author: AlexYuan
  * @Date: 2021-12-02 14:21:02
  * @LastEditors: you
- * @LastEditTime: 2021-12-02 17:13:19
+ * @LastEditTime: 2021-12-07 12:40:03
  */
 import Button from '@/components/button/index'
+import Loading from '@/components/loading/index'
 
-const components = [Button]
+const components = [Button, Loading]
 
 const install = function (Vue) {
   components.forEach((component) => {
@@ -19,5 +20,6 @@ const install = function (Vue) {
 export default {
   version: '0.0.1',
   install,
-  Button
+  Button,
+  Loading
 }
