@@ -4,7 +4,7 @@
  * @Author: AlexYuan
  * @Date: 2021-11-29 18:52:02
  * @LastEditors: you
- * @LastEditTime: 2021-12-15 21:47:46
+ * @LastEditTime: 2021-12-20 09:54:37
 -->
 <template>
   <button class="tt-btn tt-btn--normal" :class="dyClass" @click.stop="onClick">
@@ -17,6 +17,7 @@
 <script lang="ts" setup>
 import { defineProps, defineEmits, computed } from 'vue'
 import prop from './props.ts'
+import { loading as ttLoading } from '../../loading/index.ts'
 
 const props = defineProps(prop)
 const dyClass = computed(() => {
