@@ -23,6 +23,7 @@ module.exports = {
         ignore: ['^@/'] // @ 是设置的路径别名
       }
     ],
-    'import/extensions': ['error', { js: 'never', ts: 'never', tsx: 'never', vue: 'never' }]
+    'import/extensions': ['error', { js: 'never', ts: 'never', tsx: 'never', vue: 'always' }],
+    'func-names': 0
   }
 }

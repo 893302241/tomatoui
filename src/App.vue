@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import '@/assets/iconfont/iconfont'
-import '@/assets/style/light'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
@@ -10,8 +9,12 @@ interface componentItem {
 }
 const componentMap = [
   {
-    name: '按钮',
+    name: 'Button 按钮',
     type: 'button'
+  },
+  {
+    name: 'Loading 加载',
+    type: 'loading'
   }
 ]
 const onNavigate = (item: componentItem) => {
@@ -34,8 +37,15 @@ const onNavigate = (item: componentItem) => {
       </div>
     </div>
     <div class="tomatoui-body">
-      <div class="aside" v-for="component in componentMap" :key="component.type">
-        <span class="component-item" @click="onNavigate(component)">{{ component.name }}</span>
+      <div class="aside">
+        <p
+          class="component-item"
+          v-for="component in componentMap"
+          :key="component.type"
+          @click="onNavigate(component)"
+        >
+          {{ component.name }}
+        </p>
       </div>
       <div class="view">
         <router-view v-slot="{ Component, route }">
@@ -49,7 +59,8 @@ const onNavigate = (item: componentItem) => {
     </div>
   </div>
 </template>
-<style lang="scss" scoped>
+<style lang="less" scoped>
+@import '@/assets/style/light.less';
 #tomatoui {
   height: 100%;
   .tomatoui-header {
